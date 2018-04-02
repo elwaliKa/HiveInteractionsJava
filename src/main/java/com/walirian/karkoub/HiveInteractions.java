@@ -22,7 +22,7 @@ public class HiveInteractions {
         Connection con = DriverManager.getConnection("jdbc:hive2://cloudera.training.walirian.com:10000/elwali_yelp;ssl=false","username","password");
         Statement stmt = con.createStatement();
 
-    /*  // show tables
+     // show tables
         String sqlShowTables = "show tables " ;
         ResultSet res = stmt.executeQuery(sqlShowTables);
         while(res.next()){
@@ -35,7 +35,7 @@ public class HiveInteractions {
         stmt.executeQuery(sqlCreateTable);
         logger.info("new table created");
 
-*/
+
         // show tables contents
         String sqlSelect = "SELECT * from tip limit 5";
 
