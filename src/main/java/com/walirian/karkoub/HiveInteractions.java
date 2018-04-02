@@ -19,10 +19,10 @@ public class HiveInteractions {
         //set jdbc hive driver
         Class.forName(driverName);
         //connect to hive
-        Connection con = DriverManager.getConnection("jdbc:hive2://cloudera.training.walirian.com:10000/elwali_yelp;ssl=false","hive","hive");
+        Connection con = DriverManager.getConnection("jdbc:hive2://cloudera.training.walirian.com:10000/elwali_yelp;ssl=false","username","password");
         Statement stmt = con.createStatement();
 
-      // show tables
+    /*  // show tables
         String sqlShowTables = "show tables " ;
         ResultSet res = stmt.executeQuery(sqlShowTables);
         while(res.next()){
@@ -34,12 +34,8 @@ public class HiveInteractions {
         String sqlCreateTable = "create table ".concat("helloHive (message String) STORED AS PARQUET");
         stmt.executeQuery(sqlCreateTable);
         logger.info("new table created");
-        ResultSet res1 = stmt.executeQuery(sqlShowTables);
-        while(res1.next()){
-            System.out.println(res1.getString(1));
-        }
 
-
+*/
         // show tables contents
         String sqlSelect = "SELECT * from tip limit 5";
 
@@ -53,8 +49,8 @@ public class HiveInteractions {
 
 
 
-        /*res1.close():
-        res.close();*/
+        res2.close();
+        //res.close();
         con.close();
 
 
